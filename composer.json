@@ -1,0 +1,48 @@
+{
+    "name": "charoday/max-bot-api-client-php74",
+    "description": "PHP SDK for MAX Messenger Bot API (PHP 7.4 compatible fork)",
+    "keywords": [
+        "max",
+        "messenger",
+        "bot",
+        "api",
+        "sdk",
+        "php74"
+    ],
+    "homepage": "https://github.com/Charoday/max-bot-api-client-php74",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Charoday"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "monolog/monolog": "^2.11",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/log": "^1.0 || ^2.0 || ^3.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.5 || ^7.0",
+        "phpunit/phpunit": "^8.5 || ^9.5"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "To use the default HTTP client implementation"
+    },
+    "autoload": {
+        "psr-4": {
+            "Charoday\\MaxMessengerBot\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.33"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
