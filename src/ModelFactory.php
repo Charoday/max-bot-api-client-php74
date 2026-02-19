@@ -102,18 +102,21 @@ class ModelFactory
      * @throws SerializationException
      */
     public function createUpdateList($data)
-    {
-        if (!isset($data['updates']) || !is_array($data['updates'])) {
-            throw new SerializationException('Invalid update list structure.');
-        }
-
+    {   
         $marker = $data['marker'] ?? 0;
         $updates = [];
-        foreach ($data['updates'] as $item) {
-            if (!isset($item['update_type'])) {
-                throw new SerializationException('Invalid update item structure.');
+
+        // При обработке данных от вэб-хука не приходит массив updates
+        if (isset($data['updates']) && is_array($data['updates'])) {
+            foreach ($data['updates'] as $item) {
+                if (!isset($item['update_type'])) {
+                    throw new SerializationException('Invalid update item structure.');
+                }
+                $updates[] = $this->createUpdate($item['update_type'], $item, $marker);
             }
-            $updates[] = $this->createUpdate($item['update_type'], $item, $marker);
+        }
+        else{
+            $updates[] = $this->createUpdate($data['update_type'], $data, $marker);
         }
 
         return new UpdateList($updates, $marker);
