@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace Charoday\MaxMessengerBot\Models\Attachments\Requests;
 
 use Charoday\MaxMessengerBot\Enums\AttachmentType;
-use Charoday\MaxMessengerBot\Models\Attachments\Payloads\UploadedInfoAttachmentRequestPayload;
+use Charoday\MaxMessengerBot\Models\Attachments\Requests\Payloads\UploadedInfoAttachmentRequestPayload;
 
 /**
  * Request model for video attachments when sending messages.
