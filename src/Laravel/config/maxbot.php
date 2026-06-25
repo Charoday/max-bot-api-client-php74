@@ -35,7 +35,7 @@ return [
     | Configuration for the Max Bot API connection.
     |
     */
-    'base_url' => env('MAXBOT_BASE_URL', 'https://platform-api.max.ru'),
+    'base_url' => env('MAXBOT_BASE_URL', 'https://platform-api2.max.ru'),
     'api_version' => env('MAXBOT_API_VERSION'),
 
     /*
